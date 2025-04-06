@@ -1,8 +1,6 @@
 package collections.iterableIterator;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class IterableDemo {
   public static void main(String[] args) {
@@ -26,5 +24,27 @@ public class IterableDemo {
       }
     }
     System.out.println(map);
+
+    List<Integer> list = new ArrayList<>();
+
+    list.add(11);
+    list.add(44);
+    list.add(33);
+    list.add(22);
+    list.add(55);
+
+    Iterator<Integer> itr = list.iterator();
+
+    for(Integer i : list) {
+      System.out.print(i + " ");
+    }
+    while(itr.hasNext()) {
+      Integer num = itr.next();
+      itr.remove();
+    }
+    System.out.println("\nPrinting the list 2nd Time");
+    for(Integer i : list) {
+      System.out.print(i + " ");
+    }
   }
 }
